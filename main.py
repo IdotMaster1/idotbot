@@ -31,6 +31,10 @@ async def say(ctx, *, message: str):
         await ctx.send("stop trying to ping everyone <:trollcrazy:962783074544934962>") # This is an emoji from the bunkercoin discord. To make this work you need to include the ID. To get the full string do \:emojiname: and it will give you <:emojihere:XXXXXXXXXXXXXXXXXX>
 
 @client.command()
+async def github(ctx, *, message: str):
+    await ctx.send("https://github.com/IdotMaster1/idotbot")
+
+@client.command()
 async def image(ctx):
     path = random.choice(os.listdir('holyarchive/'))  # If you are self-hosting, make a folder called holyarchive and stuff you want it to send IT HAS TO BE A VIDEO OR IMAGE
     await ctx.send(file=discord.File("holyarchive/"+path))
@@ -46,6 +50,7 @@ async def commands(ctx):
     embed.add_field(name='%whoami', value='Tells you your name, useless to the max', inline=False)
     embed.add_field(name='%ping', value="Give you the ping of the bot", inline=False)
     embed.add_field(name='%say', value="say!!", inline=False)
+    embed.add_field(name='%github', value="Print the github page", inline=False)
     embed.add_field(name='%image', value="Best command, Gives you a random meme from my Holy Archive", inline=False)
     embed.set_footer(text="Here to serve you!")
     await ctx.send(embed=embed)
